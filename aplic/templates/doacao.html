@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <title>CariôEventos - Reservas de Ingressos</title>
+  <style>
+    .header-overlay {
+      position: relative;
+    }
+
+    .header-overlay img {
+      width: 100vw;
+      height: auto;
+      margin-left: -10px;
+    }
+
+    .header-overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 710px;
+      margin-left: -10px;
+      z-index: 1;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: gray;
+      z-index: 2;
+      font-size: 3em;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+main {
+    padding: 1em;
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+ol {
+    padding-left: 1.2em;
+}
+
+strong {
+    display: block;
+    margin-top: 1em;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 1em;
+}
+
+    footer {
+      background-color: lightgray;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="BarraNavegacao">
+    <div class="logo"><a href="/">
+      <img src='static/LogoCario.png'></a>
+    </div>
+    <ul>
+      <a href="/eventos" class="btn-evento btn-branco">Eventos</a>
+      <a href="/doacao" class="btn-doacao btn-branco">Reservas</a>
+      <a href="/parcerias" class="btn-parceria btn-branco">Parcerias</a>
+      {% if not user.is_authenticated %}
+      <a href="/login" class="btn-login btn-branco">Entrar</a>
+      <a href="/registro" class="btn-registar btn-branco">Registrar-se</a>
+      {% endif %}
+
+      {% if user.is_authenticated %}
+      <div class="usuario-container">
+        <button class="usuario-btn" id="usuario-btn">
+          <img src="/static/perfil.png" alt="Imagem de perfil"><br>
+          {{ user.username }}
+        </button>
+        <div id="usuario-menu">
+          <a href="{% url 'meus_dados' %}">Meu Perfil</a>
+          <a href="{% url 'logout' %}">Logout</a>
+        </div>
+      </div>
+      {% endif %}
+    </ul>
+  </div>
+    <header>
+        <h1>CariôEventos</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Como Reservar seu Ingresso</h2>
+            <ol>
+                <li>
+                    <strong>Escolha o Evento:</strong>
+                    <p>Navegue pela nossa página de eventos e escolha o evento que deseja participar. Clique no evento para ver mais detalhes.</p>
+                </li>
+                <li>
+                    <strong>Selecione seu Ingresso:</strong>
+                    <p>Escolha a quantidade de ingressos que deseja comprar. Clique em "Reservar Ingresso".</p>
+                </li>
+                <li>
+                    <strong>Complete suas Informações:</strong>
+                    <p>Preencha seu nome, e-mail e telefone para contato. Escolha a forma de pagamento (Cartão de Crédito, Débito, Pix).</p>
+                </li>
+                <li>
+                    <strong>Confirmação:</strong>
+                    <p>Após a confirmação do pagamento, você receberá um e-mail com a confirmação da sua reserva e um código QR para retirar seu ingresso.</p>
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h2>Como Retirar seu Ingresso</h2>
+            <p><strong>Endereço para Retirada:</strong></p>
+            <address>
+                CariôEventos - Ponto de Retirada de Ingressos<br>
+                Rua Fictícia, 123 - Centro<br>
+                Rio de Janeiro, RJ, 20000-000<br>
+                Horário de Funcionamento: Segunda a Sexta, das 10h às 18h.
+            </address>
+            <p><strong>Instruções para Retirada:</strong></p>
+            <ol>
+                <li>
+                    <strong>Leve o Código QR:</strong>
+                    <p>Apresente o código QR recebido no e-mail de confirmação no ponto de retirada.</p>
+                </li>
+                <li>
+                    <strong>Documento de Identificação:</strong>
+                    <p>Tenha em mãos um documento de identificação com foto.</p>
+                </li>
+                <li>
+                    <strong>Retire seu Ingresso:</strong>
+                    <p>Um atendente verificará suas informações e entregará seu ingresso.</p>
+                </li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <h2>Contato</h2>
+            <p><strong>Telefone:</strong> (21) 1234-5678</p>
+            <p><strong>E-mail:</strong> contato@carioeventos.com.br</p>
+        </section>
+    </footer>
+</body>
+</html>
