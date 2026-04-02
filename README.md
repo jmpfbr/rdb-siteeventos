@@ -48,7 +48,7 @@ Para rodar este projeto, você precisará ter instalado:
 Clone o repositório:
 
 ```text
-git clone [https://github.com/jmpfbr/seu-repositorio.git](https://github.com/jmpfbr/seu-repositorio.git)
+git clone [https://github.com/jmpfbr/rdb-siteeventos.git](https://github.com/jmpfbr/rdb-siteeventos.git)
 ```
 
 Configure o Banco de Dados:
