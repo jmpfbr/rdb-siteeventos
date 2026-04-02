@@ -75,17 +75,19 @@ python manage.py runserver
 
 ---
 
-🔗 Links Úteis 
+## 🔗 Links Úteis
 
-Download PostgreSQL
-
-Download pgAdmin
+* [Download PostgreSQL](https://www.postgresql.org/download/)
+* [Download pgAdmin](https://www.pgadmin.org/download/)
 
 ---
 
 👨‍💻 Autor
 
 João Marcos Fierro e Grupo
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jmpfbr)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jmpfbr)
 
 ---
 
